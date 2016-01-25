@@ -40,7 +40,6 @@ $dg -> set_col_title("FormstackImage4",  "Image 4");
 $dg -> set_col_title("FormstackImage5",  "Image 5");
 $dg -> set_col_title("FormstackImage6",  "Image 6");
 $dg -> set_col_title("FormstackImage7",  "Image 7");
-$dg -> set_col_title("FormstackImage8",  "Image 8");
 $dg -> set_col_title("BeforeAfter1",  "Upload 1");
 $dg -> set_col_title("BeforeAfter2",  "Upload 2");
 $dg -> set_col_title("BeforeAfter3",  "Upload 3");
@@ -55,7 +54,6 @@ $dg -> set_col_img("FormstackImage4");
 $dg -> set_col_img("FormstackImage5");
 $dg -> set_col_img("FormstackImage6");
 $dg -> set_col_img("FormstackImage7");
-$dg -> set_col_img("FormstackImage8");
 $dg -> set_col_img("BeforeAfter1");
 /*
 $dg -> set_col_img("BeforeAfter2");
@@ -107,7 +105,6 @@ $dg -> set_col_edittype("FormstackImage4", "disabled");
 $dg -> set_col_edittype("FormstackImage5", "disabled");
 $dg -> set_col_edittype("FormstackImage6", "disabled");
 $dg -> set_col_edittype("FormstackImage7", "disabled");
-$dg -> set_col_edittype("FormstackImage8", "disabled");
 $dg -> set_col_edittype("BeforeAfter1", "disabled");
 $dg -> set_col_edittype("BeforeAfter2", "disabled");
 $dg -> set_col_edittype("BeforeAfter3", "disabled");
@@ -156,8 +153,7 @@ $dg -> set_col_property("FormstackImage3", array("formoptions"=>array("rowpos"=>
 $dg -> set_col_property("FormstackImage4", array("formoptions"=>array("rowpos"=>14,"colpos"=>4)));
 $dg -> set_col_property("FormstackImage5", array("formoptions"=>array("rowpos"=>15,"colpos"=>1)));
 $dg -> set_col_property("FormstackImage6", array("formoptions"=>array("rowpos"=>15,"colpos"=>2)));
-$dg -> set_col_property("FormstackImage7", array("formoptions"=>array("rowpos"=>15,"colpos"=>3)));
-$dg -> set_col_property("FormstackImage8", array("formoptions"=>array("rowpos"=>15,"colpos"=>4)));
+$dg -> set_col_property("FormstackImage7", array("formoptions"=>array("rowpos"=>16,"colpos"=>3)));
 
 
 // File upload section
