@@ -1,0 +1,1851 @@
+--------------
+DROP TABLE IF EXISTS odl_filtered_old
+--------------
+
+Query OK, 0 rows affected
+
+--------------
+CREATE TABLE odl_filtered_old AS
+	SELECT * FROM odl_filtered
+--------------
+
+Query OK, 39112 rows affected
+Records: 39112  Duplicates: 0  Warnings: 0
+
+--------------
+DROP TABLE IF EXISTS ODL_Raw
+--------------
+
+Query OK, 0 rows affected
+
+--------------
+CREATE TABLE IF NOT EXISTS ODL_Raw (
+	CPD									VARCHAR(255), 
+	Group_ID						VARCHAR(255),
+	MPC									VARCHAR(255), 
+	Door_Jamb						VARCHAR(17), 
+	U_Factor						FLOAT(6,3), 
+	SHGC								FLOAT(6,3),
+	VT									FLOAT(6,3), 
+	CR									VARCHAR(255), 
+	GL									TINYINT UNSIGNED, 
+	Low_E_Raw						VARCHAR(255), 
+	Gap_Width_Raw				VARCHAR(255), 
+	Spacer							VARCHAR(255), 
+	Gap_Fill						VARCHAR(255),
+	Grid								CHAR(1), 
+	Divider							DECIMAL(5,2), 
+	Tint								VARCHAR(255),
+	Low_E_Str1					FLOAT(6,4),
+	Low_E_Str2					VARCHAR(4),
+	Low_E_Str3					FLOAT(6,4),
+	Low_E_Str4					VARCHAR(4),
+	Gap_Width_Str1			DECIMAL(6,3),
+	Gap_Width_Str2			DECIMAL(6,3),
+	GAP_Fill_Str1				VARCHAR(255),
+	Manufacturer_Code		CHAR(3),
+	Manufacturer				VARCHAR(255),
+	NFRC_Code						VARCHAR(63),
+	Door_Type						VARCHAR(255),
+	Spacer_Name					VARCHAR(255),
+	Series							VARCHAR(1023),
+	Series_Code					VARCHAR(15),
+	Series_Concat				VARCHAR(1023),
+	Type_of_Glass				VARCHAR(255),
+	Low_E_Concat				VARCHAR(1023),
+	MPC_Slash_Cnt 			TINYINT UNSIGNED,
+	MPC_Parsed_LtSize		VARCHAR(63),
+	LtSize_Concat				VARCHAR(63),
+	Glass_Type					VARCHAR(255),
+	DoorGlass_Frame			VARCHAR(255),
+	Subgroup						VARCHAR(255),
+	Door_Lite_Size_14		CHAR(1),
+	Door_Lite_Size_12		CHAR(1),
+	Door_Lite_Size_34			CHAR(1),
+	Door_Lite_Size_Full			CHAR(1),
+	Side_Lite_Size_14			CHAR(1),
+	Side_Lite_Size_12			CHAR(1),
+	Side_Lite_Size_34			CHAR(1),
+	Side_Lite_Size_Full		CHAR(1),
+	Family								VARCHAR(255),
+	NFRC_Compliant				VARCHAR(7),
+	UID		INT NOT NULL Auto_Increment,
+	PRIMARY KEY 	(CPD),
+	INDEX CPD (CPD),
+	INDEX UID (UID)
+	)
+	ENGINE MyIsam
+--------------
+
+Query OK, 0 rows affected
+
+Bye
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082310.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 132458 rows affected
+Records: 132458  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082413.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 91380 rows affected
+Records: 91380  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082458.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3754 rows affected
+Records: 3754  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082537.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 304 rows affected
+Records: 304  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082610.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1374 rows affected
+Records: 1374  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082654.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4595 rows affected
+Records: 4595  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082730.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 236 rows affected
+Records: 236  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082807.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 9460 rows affected
+Records: 9460  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082843.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1408 rows affected
+Records: 1408  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_082938.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4054 rows affected
+Records: 4054  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083018.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 8952 rows affected
+Records: 8952  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083050.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1446 rows affected
+Records: 1446  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083150.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 304 rows affected
+Records: 304  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083236.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 16 rows affected
+Records: 16  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083314.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 56 rows affected
+Records: 56  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083349.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 30 rows affected
+Records: 30  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083432.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 805 rows affected
+Records: 805  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083509.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 804 rows affected
+Records: 804  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083553.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 26 rows affected
+Records: 26  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083722.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 40 rows affected
+Records: 40  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083755.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 100 rows affected
+Records: 100  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083832.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 28649 rows affected
+Records: 28649  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083909.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 60 rows affected
+Records: 60  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_083947.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3830 rows affected
+Records: 3830  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084022.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 460 rows affected
+Records: 460  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084058.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 7838 rows affected
+Records: 7838  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084130.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2468 rows affected
+Records: 2468  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084207.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 984 rows affected
+Records: 984  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084242.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 0 rows affected
+Records: 984  Deleted: 0  Skipped: 984  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084320.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 484 rows affected
+Records: 484  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084353.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 754 rows affected
+Records: 754  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084433.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 754 rows affected
+Records: 754  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084506.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 20546 rows affected
+Records: 20546  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084552.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 20227 rows affected
+Records: 20227  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084629.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 120 rows affected
+Records: 120  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084706.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 152 rows affected
+Records: 152  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084739.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 22196 rows affected
+Records: 22196  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084821.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 17460 rows affected
+Records: 17460  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_084923.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 82892 rows affected
+Records: 82892  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085007.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 81780 rows affected
+Records: 81780  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085058.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 5449 rows affected
+Records: 5449  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085133.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 5449 rows affected
+Records: 5449  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085209.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 11 rows affected
+Records: 11  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085252.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 7662 rows affected
+Records: 7662  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085325.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3340 rows affected
+Records: 3340  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085403.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 6680 rows affected
+Records: 6680  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085435.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 20788 rows affected
+Records: 20788  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085516.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2560 rows affected
+Records: 2560  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085606.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2292 rows affected
+Records: 2292  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085648.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3656 rows affected
+Records: 3656  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085724.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3650 rows affected
+Records: 3650  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085816.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 7224 rows affected
+Records: 7224  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085851.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 12248 rows affected
+Records: 12248  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_085945.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 5376 rows affected
+Records: 5376  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090018.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2928 rows affected
+Records: 2928  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090058.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 864 rows affected
+Records: 864  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090130.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 7496 rows affected
+Records: 7496  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090208.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4865 rows affected
+Records: 4865  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090244.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4078 rows affected
+Records: 4078  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090317.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4867 rows affected
+Records: 4867  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090357.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 30 rows affected
+Records: 30  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090429.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 102 rows affected
+Records: 102  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090504.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 6888 rows affected
+Records: 6888  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090543.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 409 rows affected
+Records: 409  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090619.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 328 rows affected
+Records: 328  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090656.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 328 rows affected
+Records: 328  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090731.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 656 rows affected
+Records: 656  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090817.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4803 rows affected
+Records: 4803  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090849.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 4803 rows affected
+Records: 4803  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_090929.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 6568 rows affected
+Records: 6568  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091005.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 34 rows affected
+Records: 34  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091043.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 58 rows affected
+Records: 58  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091126.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 132 rows affected
+Records: 132  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091205.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 18 rows affected
+Records: 18  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091238.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 256 rows affected
+Records: 256  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091315.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 301 rows affected
+Records: 301  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091349.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 420 rows affected
+Records: 420  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091436.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 207 rows affected
+Records: 207  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091508.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 207 rows affected
+Records: 207  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091544.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 104 rows affected
+Records: 104  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091618.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 312 rows affected
+Records: 312  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091702.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 190 rows affected
+Records: 190  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091737.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 436 rows affected
+Records: 436  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091813.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 968 rows affected
+Records: 968  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091847.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 12 rows affected
+Records: 12  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_091920.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 18 rows affected
+Records: 18  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092007.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3921 rows affected
+Records: 3921  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092040.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 564 rows affected
+Records: 564  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092118.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 612 rows affected
+Records: 612  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092207.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 87 rows affected
+Records: 87  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092246.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2617 rows affected
+Records: 2617  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092349.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 138 rows affected
+Records: 138  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092422.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 138 rows affected
+Records: 138  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092458.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 138 rows affected
+Records: 138  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092534.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 58 rows affected
+Records: 58  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092649.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 47 rows affected
+Records: 47  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092725.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 49 rows affected
+Records: 49  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092817.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 47 rows affected
+Records: 47  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092853.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 584 rows affected
+Records: 584  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_092927.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1540 rows affected
+Records: 1540  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093002.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 68 rows affected
+Records: 68  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093037.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 68 rows affected
+Records: 68  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093124.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 60574 rows affected
+Records: 60574  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093227.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 60670 rows affected
+Records: 60670  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093317.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 45232 rows affected
+Records: 45232  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093410.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 45332 rows affected
+Records: 45332  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093556.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 132458 rows affected
+Records: 132458  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093711.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 625 rows affected
+Records: 625  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093749.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 6568 rows affected
+Records: 6568  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093827.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 519 rows affected
+Records: 519  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093901.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 625 rows affected
+Records: 625  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_093941.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 6888 rows affected
+Records: 6888  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094019.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 318 rows affected
+Records: 318  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094053.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 194 rows affected
+Records: 194  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094128.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2418 rows affected
+Records: 2418  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094216.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3768 rows affected
+Records: 3768  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094254.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3170 rows affected
+Records: 3170  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094331.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1759 rows affected
+Records: 1759  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094406.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1761 rows affected
+Records: 1761  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094456.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 3668 rows affected, 6 warnings
+Records: 3668  Deleted: 0  Skipped: 0  Warnings: 6
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094530.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 34 rows affected
+Records: 34  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094607.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 30 rows affected
+Records: 30  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094645.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 12 rows affected
+Records: 12  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094719.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 16 rows affected
+Records: 16  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094802.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 28 rows affected
+Records: 28  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094838.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1950 rows affected
+Records: 1950  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_094942.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 60418 rows affected
+Records: 60418  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095039.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 60574 rows affected
+Records: 60574  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095124.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 1937 rows affected
+Records: 1937  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095209.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 45332 rows affected
+Records: 45332  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095259.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 45232 rows affected
+Records: 45232  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095436.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 596 rows affected
+Records: 596  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01122016_095514.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 298 rows affected
+Records: 298  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+LOAD DATA LOCAL INFILE 'D:\\Users\\WTS\\Downloads\\Search_Details_01132016_103601.csv' INTO TABLE ODL_Raw fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (CPD, Group_ID, MPC, Door_Jamb, U_Factor, SHGC, VT, CR, GL, Low_E_Raw, Gap_Width_Raw, Spacer, Gap_Fill, Grid, Divider, Tint)
+--------------
+
+Query OK, 2367 rows affected
+Records: 2367  Deleted: 0  Skipped: 0  Warnings: 0
+
+Bye
+--------------
+DELETE FROM ODL_raw WHERE SPACER NOT IN ('A1-D', 'A1-S', 'A5-S', 'A5-D', 'A8-S', 'CU-D', 'ZF-D', 'ZF-S', 'SS-D', 'OF-S')
+--------------
+
+Query OK, 107042 rows affected
+
+--------------
+UPDATE ODL_Raw SET 
+	Gap_Width_Str1 = ROUND(SUBSTRING_INDEX(SUBSTRING_INDEX(Gap_Width_Raw, ' ', 1), '(', 1),3),
+	Gap_Width_Str2 = ROUND(SUBSTRING_INDEX(SUBSTRING_INDEX(Gap_Width_Raw, ' ', -1), '(', 1),3)
+WHERE Gap_Width_Raw LIKE '% %'
+--------------
+
+Query OK, 366952 rows affected
+Rows matched: 366952  Changed: 366952  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET 
+	Gap_Width_Str1 = ROUND(Gap_Width_Raw,3)
+WHERE Gap_Width_Raw NOT LIKE '% %'
+--------------
+
+Query OK, 825380 rows affected
+Rows matched: 825380  Changed: 825380  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Gap_Width_Str2 = 0 WHERE Gap_Width_Str2 IS NULL
+--------------
+
+Query OK, 825380 rows affected
+Rows matched: 825380  Changed: 825380  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET 
+	Low_E_Str1 = ROUND(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ',', 1), '(', 1),4),
+	Low_E_Str2 = LEFT(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ',', 1), '(', -1),1)
+WHERE Low_E_Raw NOT LIKE '% %'
+--------------
+
+Query OK, 995873 rows affected
+Rows matched: 995873  Changed: 995873  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET
+	Low_E_Str1 = ROUND(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ' ', 1), '(', 1),4),
+	Low_E_Str2 = LEFT(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ' ', 1), '(', -1),1),
+	Low_E_Str3 = ROUND(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ' ', -1), '(', 1),4),
+	Low_E_Str4 = LEFT(SUBSTRING_INDEX(SUBSTRING_INDEX(Low_E_Raw, ' ', -1), '(', -1),1)
+WHERE Low_E_Raw LIKE '% %'
+--------------
+
+Query OK, 196459 rows affected
+Rows matched: 196459  Changed: 196459  Warnings: 0
+
+--------------
+UPDATE odl_raw SET Low_E_Str1 = 
+	CASE 
+		WHEN MPC RLIKE  '^.*CS ?73.*$'  OR MPC RLIKE '^.*Custom ?Select ?73.*$' OR MPC RLIKE '^.*E-?PS.*$' THEN 0.148
+		WHEN MPC RLIKE  '^.*71/?38.*$' THEN 0.027
+		WHEN MPC RLIKE '^.*C?270.*$' THEN 0.0367
+		ELSE 0
+	END
+	WHERE Low_E_Raw = '' and GL = 2
+--------------
+
+Query OK, 1650 rows affected
+Rows matched: 97558  Changed: 1650  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Low_E_Concat =
+	CONCAT(Low_E_str1, '(', Low_E_Str2, ') ')
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Low_E_Concat = 'None' WHERE Low_E_Str1 = ' '
+--------------
+
+Query OK, 126513 rows affected
+Rows matched: 126513  Changed: 126513  Warnings: 0
+
+--------------
+UPDATE odl_raw 
+SET MPC_parsed_ltsize = 
+	CASE
+		WHEN mpc RLIKE  '^.*1/4[^"]?[_| ]?L[ite]?.*$'  THEN '1/4'
+		WHEN mpc RLIKE  '^.*1/2[^"]?[_| ]?L[ite]?.*$'  THEN '1/2'
+		WHEN mpc RLIKE  '^.*3/4[^"]?[_| ]?L[ite]?.*$'  THEN '3/4'
+		WHEN mpc RLIKE  '^.*Full[^y]?[_| ]?L[ite]?.*$'  THEN 'Full'
+		ELSE NULL
+	END
+--------------
+
+Query OK, 590841 rows affected
+Rows matched: 1192332  Changed: 590841  Warnings: 0
+
+--------------
+UPDATE odl_raw 
+SET MPC_parsed_ltsize = 
+	CASE
+		WHEN mpc RLIKE  '^.*Quarter[_| ]?L[ite]?.*$' AND mpc NOT RLIKE '.*Three Quarter.*' THEN '1/4'
+		WHEN mpc RLIKE  '^.*Half[^"][_| ]?L[ite]?.*$'  THEN '1/2'
+		WHEN mpc RLIKE  '^.*Three[ ]?Quarter[^"][_| ]?L[ite]?.*$'  THEN '3/4'
+		WHEN mpc RLIKE  '^.*Full[^y][_| ]?Lite.*$'  THEN 'Full'
+		ELSE NULL
+	END
+WHERE mpc_parsed_ltsize IS NULL
+--------------
+
+Query OK, 169632 rows affected
+Rows matched: 601491  Changed: 169632  Warnings: 0
+
+--------------
+UPDATE odl_raw 
+SET MPC_parsed_ltsize = 'Full'
+		WHERE mpc RLIKE  '^.*FL[ite]?.*$' AND mpc_parsed_ltsize IS NULL
+--------------
+
+Query OK, 195873 rows affected
+Rows matched: 195873  Changed: 195873  Warnings: 0
+
+--------------
+UPDATE odl_raw
+SET MPC_parsed_ltsize = 
+	'None'
+WHERE mpc_parsed_ltsize IS NULL
+--------------
+
+Query OK, 235986 rows affected
+Rows matched: 235986  Changed: 235986  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET NFRC_Code = SUBSTRING_INDEX(CPD, '-', 3)
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw O
+	INNER JOIN NFRC_Code_Series N ON O.NFRC_Code = N.NFRC_Code
+	SET O.Series = N.Series,  O.Family = N.Family
+--------------
+
+Query OK, 1044643 rows affected
+Rows matched: 1044643  Changed: 1044643  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Series_Code =  SUBSTRING_INDEX(SUBSTRING_INDEX(CPD, '-', 3), '-', -2)
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Series_Concat = CONCAT(Series,' <', Series_Code, '>')
+--------------
+
+Query OK, 1044643 rows affected
+Rows matched: 1192332  Changed: 1044643  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET GAP_Fill_Str1 =
+		CASE Gap_Fill 
+		WHEN 'Fill 1: AIR (100)' THEN 'Air'
+		WHEN 'Fill 1: AIR (100) Fill 2: AIR (100)' THEN 'Air'
+		WHEN 'Fill 1: ARG/AIR (80/20)' THEN 'Arg'
+		WHEN 'Fill 1: ARG/AIR (90/10)' THEN 'Arg'
+		ELSE NULL
+		END
+--------------
+
+Query OK, 1017504 rows affected
+Rows matched: 1192332  Changed: 1017504  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Manufacturer_Code = LEFT(CPD,3)
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Manufacturer = 
+	CASE Manufacturer_Code
+		WHEN 'ADW' THEN 'Atrium'
+		WHEN 'BSS' THEN 'Builders Specialty Supply, Therma-Tru'
+		WHEN 'BYB' THEN 'Bayer Built Woodworks'
+		WHEN 'CHI' THEN 'Champion Windows, Inc.'
+		WHEN 'CHW' THEN 'Champion Window & Patio Room Co.'
+		WHEN 'CIL' THEN 'Clearview Industries'
+		WHEN 'CRT' THEN 'Crest Doors'
+		WHEN 'DUS' THEN 'Dusco-a licencee of Stanley Black & Decker'
+		WHEN 'ELX' THEN 'Elixir Industries'
+		WHEN 'HWD' THEN 'Hayfield Window & Door Co'
+		WHEN 'JEL' THEN 'JELD-WEN'
+		WHEN 'MIL' THEN 'Milgard Manufacturing'
+		WHEN 'MIN' THEN 'Minnkota Windows'
+		WHEN 'MLM' THEN 'Milliken Millwork, Inc.'
+		WHEN 'MMI' THEN 'Merrill Millwork'
+		WHEN 'NPC' THEN 'Plastpro Inc.'
+		WHEN 'NSM' THEN 'North Star Manufacturing (London) Ltd'
+		WHEN 'OKW' THEN 'OKNA Windows Co'
+		WHEN 'OST' THEN 'Ostaco 2000 Windoors Inc.'
+		WHEN 'OVP' THEN 'Oceanview Patio Doors Limited'
+		WHEN 'PBH' THEN 'ProBuild Holdings'
+		WHEN 'PEL' THEN 'Pella'
+		WHEN 'POW' THEN 'Pollard Windows'
+		WHEN 'PRD' THEN 'ProVia Door'
+		WHEN 'PWN' THEN 'Prestige Windows & Door Ltd'
+		WHEN 'RES' THEN 'Novatech Patio Door Inc.'
+		WHEN 'RES' THEN 'Novatech Patio Door, Inc.'
+		WHEN 'RPT' THEN 'Royal Window & Door Profiles Royalplast Div'
+		WHEN 'RSC' THEN 'Remodelers Supply'
+		WHEN 'SBU' THEN 'Standard Doors Inc'
+		WHEN 'SDL' THEN 'Sunview Patio Doors Ltd.'
+		WHEN 'SGI' THEN 'Skyreach L&S Extrusions Copr'
+		WHEN 'SIL' THEN 'Silver Line Building Products LLC'
+		WHEN 'SNV' THEN 'Sunview Windows (Newco Building Supplies, Inc.)'
+		WHEN 'SSL' THEN 'Strassburger Supplies Ltd.'
+		WHEN 'STN' THEN 'Masonite International'
+		WHEN 'TBP' THEN 'Taylor Entrance Systems'
+		WHEN 'THC' THEN 'Therma-Tru Corporation'
+		WHEN 'TRI' THEN 'Thermal Industries Inc.'
+		WHEN 'TTC' THEN 'Tru Tech Corporation'
+		WHEN 'VIM' THEN 'Vinylmax Windows'
+		WHEN 'VYW' THEN 'Vytek Corporation'
+		WHEN 'WCY' THEN 'Window City Industries'
+		WHEN 'WCY' THEN 'Window City Industries, Inc.'
+		ELSE NULL
+	END
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Spacer_Name =
+	CASE Spacer
+		WHEN 'A1-S' THEN '<A1-S> Box Alum'
+		WHEN 'CU-D' THEN '<CU-D> Intercept'
+		WHEN 'A8-S' THEN '<A8-S> Duraseal'
+		WHEN 'A5-S' THEN '<A5-S> Decoseal'
+		WHEN 'A5-D' THEN '<A5-D> Decoseal with Poly'
+		WHEN 'A1-D' THEN '<A1-D> Dual Sealed Box Alum'
+		WHEN 'SS-D' THEN '<SS-D> Cardinal XL-Edge'
+		WHEN 'ZF-D' THEN '<ZF-D> Superspacer'
+		WHEN 'ZF-S' THEN '<ZF-S> Superspacer'
+		WHEN 'OF-S' THEN '<OF-S> Superspacer'
+		ELSE 'n/a'
+	END
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET NFRC_Compliant = 
+	CASE Spacer
+		WHEN 'A1-S' THEN 'No'
+		WHEN 'A1-D' THEN 'No'
+		ELSE 'Yes'
+	END
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET Divider = NULL WHERE Divider = -1
+--------------
+
+Query OK, 397332 rows affected
+Rows matched: 397332  Changed: 397332  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET MPC = REPLACE(MPC, ',', ' ')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 1192332  Changed: 0  Warnings: 0
+
+--------------
+UPDATE ODL_Raw SET CPD = CONCAT(SUBSTRING_INDEX(CPD, '-', 3), ' ',SUBSTRING_INDEX(CPD, '-', -2))
+--------------
+
+Query OK, 1192332 rows affected
+Rows matched: 1192332  Changed: 1192332  Warnings: 0
+
+--------------
+UPDATE odl_raw SET MPC = replace( replace(MPC, ',', ''), '"', '' ),
+	Series = replace( replace(Series, ',', ''), '"', '' ),
+	Series_Concat = replace( replace(Series_Concat, ',', ''), '"', '' ),
+	Subgroup = trim(Subgroup)
+--------------
+
+Query OK, 31947 rows affected
+Rows matched: 1192332  Changed: 31947  Warnings: 0
+
+Bye
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.25 - 0.03  AND 0.25 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1020 rows affected
+Rows matched: 1020  Changed: 1020  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.25 - 0.03  AND 0.25 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 722 rows affected
+Rows matched: 722  Changed: 722  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1850 rows affected
+Rows matched: 1850  Changed: 1850  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 2037 rows affected
+Rows matched: 2037  Changed: 2037  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 854 rows affected
+Rows matched: 854  Changed: 854  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.29 - 0.03  AND 0.29 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1544 rows affected
+Rows matched: 1544  Changed: 1544  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.29 - 0.03  AND 0.29 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1680 rows affected
+Rows matched: 1680  Changed: 1680  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 2716 rows affected
+Rows matched: 2716  Changed: 2716  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 2678 rows affected
+Rows matched: 2678  Changed: 2678  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 1420 rows affected
+Rows matched: 1420  Changed: 1420  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 1847 rows affected
+Rows matched: 1847  Changed: 1847  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 1897 rows affected
+Rows matched: 1897  Changed: 1897  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'S' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 1129 rows affected
+Rows matched: 1129  Changed: 1129  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'S' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$') AND MPC NOT RLIKE '.*iron.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'OF-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 576 rows affected
+Rows matched: 576  Changed: 576  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'SS-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1387 rows affected
+Rows matched: 1387  Changed: 1387  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity doorglass Rectangles' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.758 - 0.03  AND 0.758 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'SS-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.0367, 0.0366, 0, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1536 rows affected
+Rows matched: 1536  Changed: 1536  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.25 - 0.03  AND 0.25 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 372 rows affected
+Rows matched: 372  Changed: 372  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.25 - 0.03  AND 0.25 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 555 rows affected
+Rows matched: 555  Changed: 555  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.625 - 0.03  AND 0.625 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('3/4')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 180 rows affected
+Rows matched: 180  Changed: 180  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 368 rows affected
+Rows matched: 368  Changed: 368  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 356 rows affected
+Rows matched: 356  Changed: 356  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Commodity doorglass:  1-Lites GBGs external grilles', subgroup = 'Commodity Glass Ovals & Roundtops' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 348 rows affected
+Rows matched: 348  Changed: 348  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Simulated Divided Lite', subgroup = 'Simulated Divided Lite' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 993 rows affected
+Rows matched: 993  Changed: 993  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Simulated Divided Lite', subgroup = 'Simulated Divided Lite' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.813 - 0.03  AND 0.813 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'S' AND MPC_Parsed_LtSize IN ('1/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 282 rows affected
+Rows matched: 282  Changed: 282  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Deco Rectangular Frame' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.313 - 0.03  AND 0.313 + 0.03  AND Gap_Width_Str2 BETWEEN 0.313 - 0.03 AND 0.313 + 0.03 AND Spacer = 'A5-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.0367, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1922 rows affected
+Rows matched: 1922  Changed: 1922  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Deco Rectangular Frame' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.313 - 0.03  AND 0.313 + 0.03  AND Gap_Width_Str2 BETWEEN 0.313 - 0.03 AND 0.313 + 0.03 AND Spacer = 'A1-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.0367, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 1722 rows affected
+Rows matched: 1722  Changed: 1722  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Deco Rectangular Frame' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.313 - 0.03  AND 0.313 + 0.03  AND Gap_Width_Str2 BETWEEN 0.313 - 0.03 AND 0.313 + 0.03 AND Spacer = 'A1-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.0367, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Deco Rectangular Frame' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.313 - 0.03  AND 0.313 + 0.03  AND Gap_Width_Str2 BETWEEN 0.313 - 0.03 AND 0.313 + 0.03 AND Spacer = 'ZF-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.0367, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 277 rows affected
+Rows matched: 277  Changed: 277  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Oval Deco' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.243 - 0.03  AND 0.243 + 0.03  AND Gap_Width_Str2 BETWEEN 0.243 - 0.03 AND 0.243 + 0.03 AND Spacer = 'A5-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('3/4')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 387 rows affected
+Rows matched: 387  Changed: 387  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Decorative', subgroup = 'Oval Deco' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.313 - 0.03  AND 0.313 + 0.03  AND Gap_Width_Str2 BETWEEN 0.313 - 0.03 AND 0.313 + 0.03 AND Spacer = 'A5-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/2','3/4')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Severe Weather Deco' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.205 - 0.03  AND 0.205 + 0.03  AND Gap_Width_Str2 BETWEEN 0.205 - 0.03 AND 0.205 + 0.03 AND Spacer = 'A5-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 140 rows affected
+Rows matched: 140  Changed: 140  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather 1-Lites GBGs' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 368 rows affected
+Rows matched: 368  Changed: 368  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather 1-Lites GBGs' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.509 - 0.03  AND 0.509 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476, 0.068) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 1481 rows affected
+Rows matched: 1481  Changed: 1481  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather 1-Lites GBGs' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.509 - 0.03  AND 0.509 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476, 0.068) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 998 rows affected
+Rows matched: 998  Changed: 998  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather 1-Lites GBGs' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.509 - 0.03  AND 0.509 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. W. Internal Wrought Iron' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.535 - 0.03  AND 0.535 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A5-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 182 rows affected
+Rows matched: 182  Changed: 182  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. W. Internal Wrought Iron' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.535 - 0.03  AND 0.535 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A5-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather Blind' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.813 - 0.03  AND 0.813 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476, 0.068) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 386 rows affected
+Rows matched: 386  Changed: 386  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Severe Weather Impact-rated ', subgroup = 'Sev. Weather Blind' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.813 - 0.03  AND 0.813 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476, 0.068) AND (MPC RLIKE '^.*LAMI?.*$' OR MPC RLIKE '^.*IMP.*$') AND MPC NOT RLIKE '.*[Non]?ImpDoor.*'
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Blinds', subgroup = 'Dual Glazed Blind' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.813 - 0.03  AND 0.813 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2','3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.0367, 0.037) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 863 rows affected
+Rows matched: 863  Changed: 863  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Blinds', subgroup = 'Triple Glazed Blind' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0.813 - 0.03 AND 0.813 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 293 rows affected
+Rows matched: 293  Changed: 293  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Blinds', subgroup = 'Triple Glazed Blind' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0.813 - 0.03 AND 0.813 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 293 rows affected
+Rows matched: 293  Changed: 293  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Blinds', subgroup = 'Triple Glazed Blind' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0.813 - 0.03 AND 0.813 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Blinds', subgroup = 'Triple Glazed Blind' WHERE glass_type IS NULL AND GL = 3 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0.813 - 0.03 AND 0.813 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/2','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 0  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Internal & External Wrought Iron', subgroup = 'Internal Wrought Iron' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A5-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/4','1/2','3/4')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*IRON.*$' OR MPC RLIKE '^.*Iron.*$')
+--------------
+
+Query OK, 296 rows affected
+Rows matched: 296  Changed: 296  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Internal & External Wrought Iron', subgroup = 'Internal Wrought Iron' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0) AND (MPC RLIKE '^.*IRON.*$' OR MPC RLIKE '^.*Iron.*$')
+--------------
+
+Query OK, 153 rows affected
+Rows matched: 153  Changed: 153  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Internal & External Wrought Iron', subgroup = 'External Wrought Iron' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.75 - 0.03  AND 0.75 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('3/4','Full')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 232 rows affected
+Rows matched: 232  Changed: 232  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Vent', subgroup = 'Vent 22x36' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A8-S' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 185 rows affected
+Rows matched: 185  Changed: 185  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Vent', subgroup = 'Vent 22x36' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'A1-S' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 595 rows affected
+Rows matched: 595  Changed: 595  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Vent', subgroup = 'Vent 22x36' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'N' AND MPC_Parsed_LtSize IN ('1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 433 rows affected
+Rows matched: 433  Changed: 433  Warnings: 0
+
+--------------
+UPDATE odl_raw SET glass_type = 'Vent', subgroup = 'Vent 22x36' WHERE glass_type IS NULL AND GL = 2 AND Gap_Width_Str1 BETWEEN 0.5 - 0.03  AND 0.5 + 0.03  AND Gap_Width_Str2 BETWEEN 0 - 0.03 AND 0 + 0.03 AND Spacer = 'CU-D' AND grid = 'G' AND MPC_Parsed_LtSize IN ('1/2')  AND cast(low_e_str1 as DECIMAL(6,4)) IN (0, 0.148, 0.1476) AND (MPC RLIKE '^.*$' OR MPC RLIKE '^.*$')
+--------------
+
+Query OK, 425 rows affected
+Rows matched: 425  Changed: 425  Warnings: 0
+
+--------------
+DROP TABLE IF EXISTS ODL_Filtered
+--------------
+
+Query OK, 0 rows affected
+
+--------------
+CREATE TABLE ODL_Filtered AS (
+	SELECT DISTINCT * FROM odl_raw r
+		WHERE glass_type is not null
+		ORDER BY 
+			substring_index(cpd, '-', 1),
+			substring_index(substring_index(cpd, '-', 2), '-', -1),
+			cast(substring_index(substring_index(cpd, ' ', 1), '-', -1) as unsigned int),
+			cast(substring_index(substring_index(cpd, ' ', -1), '-', 1) as unsigned int),
+			cast(substring_index(substring_index(cpd, ' ', -1), '-', -1) as unsigned int)	
+		)
+--------------
+
+Query OK, 39978 rows affected
+Records: 39978  Duplicates: 0  Warnings: 0
+
+--------------
+ALTER TABLE odl_filtered
+	ADD COLUMN One  tinyint(1) UNSIGNED NULL DEFAULT 1 AFTER UID,	
+	ADD COLUMN Row	int	UNSIGNED NOT NULL DEFAULT 0 AFTER One,
+	ADD PRIMARY KEY (CPD)
+--------------
+
+Query OK, 39978 rows affected
+Records: 39978  Duplicates: 0  Warnings: 0
+
+--------------
+UPDATE odl_filtered  
+	JOIN (SELECT @curRow :=  0)t1
+	SET Row = @curRow := @curRow + 1
+--------------
+
+Query OK, 39978 rows affected
+Rows matched: 39978  Changed: 39978  Warnings: 0
+
+--------------
+UPDATE odl_filtered SET MPC = replace( replace(MPC, ',', ''), '"', '' )
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 39978  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_filtered SET Series = replace( replace(Series, ',', ''), '"', '' )
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 39978  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_filtered SET Series_Concat = replace( replace(Series_Concat, ',', ''), '"', '' )
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 39978  Changed: 0  Warnings: 0
+
+--------------
+UPDATE odl_filtered SET MPC = REPLACE(MPC, ',', ' ')
+--------------
+
+Query OK, 0 rows affected
+Rows matched: 39978  Changed: 0  Warnings: 0
+
+--------------
+DELETE FROM odl_filtered WHERE MPC RLIKE '^.*71/38.*$'
+--------------
+
+Query OK, 0 rows affected
+
+--------------
+DELETE FROM odl_filtered WHERE glass_type = 'Vent' AND spacer_name LIKE '%Intercept'
+--------------
+
+Query OK, 858 rows affected
+
+--------------
+DELETE FROM odl_filtered WHERE manufacturer_code = 'THC'
+--------------
+
+Query OK, 8 rows affected
+
+Bye
+--------------
+SELECT * 
+INTO OUTFILE 'D:\\OneDrive\\Personal\\MSC\\ODL\\DataRepository\\Filtered_Combined.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+FROM ODL_Filtered
+--------------
+
+Query OK, 39112 rows affected
+
+--------------
+SELECT * 
+INTO OUTFILE 'D:\\Users\\WTS\\Documents\\Personal\\Moonlighting\\MSC\\ODL\\DataRepository\\Filtered_Combined.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+FROM ODL_Filtered
+--------------
+
+Query OK, 39112 rows affected
+
+Bye
+--------------
+SELECT MIN(table_id) AS Status, cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+FROM
+ (
+
+	SELECT 'Removed' as table_id, o.cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+	FROM odl_filtered_old AS o
+	UNION ALL
+	SELECT 'Added' as table_id, n.cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+	FROM odl_filtered AS n
+
+)   AS alias_table
+GROUP BY cpd
+HAVING COUNT(cpd) = 1
+ORDER BY Status ASC, cpd ASC
+INTO OUTFILE 'D:\\OneDrive\\Personal\\MSC\\ODL\\DataRepository\\New_CPDs.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+--------------
+
+Query OK, 0 rows affected
+
+--------------
+SELECT MIN(table_id) AS Status, cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+FROM
+ (
+
+	SELECT 'Removed' as table_id, o.cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+	FROM odl_filtered_old AS o
+	UNION ALL
+	SELECT 'Added' as table_id, n.cpd AS cpd, manufacturer AS Manufacturer, MPC AS MPC
+	FROM odl_filtered AS n
+
+)   AS alias_table
+GROUP BY cpd
+HAVING COUNT(cpd) = 1
+ORDER BY Status ASC, cpd ASC
+INTO OUTFILE 'D:\\Users\\WTS\\Documents\\Personal\\Moonlighting\\MSC\\ODL\\DataRepository\\New_CPDs.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+--------------
+
+Query OK, 0 rows affected
+
+Bye
