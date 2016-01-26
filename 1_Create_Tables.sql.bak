@@ -70,12 +70,12 @@ CREATE TABLE IF NOT EXISTS ODL_Raw (
 	Side_Lite_Size_Full		CHAR(1),
 	Family								VARCHAR(255),
 	NFRC_Compliant				VARCHAR(7),
-	UID		INT NOT NULL Auto_Increment,
 	ES_Northern					TINYINT UNSIGNED DEFAULT 0,
 	ES_NorthCentral					TINYINT UNSIGNED DEFAULT 0,
 	ES_SouthCentral					TINYINT UNSIGNED DEFAULT 0,
 	ES_Southern					TINYINT UNSIGNED DEFAULT 0,
 	es_zones						INT UNSIGNED DEFAULT 0,
+	UID		INT NOT NULL Auto_Increment,
 	PRIMARY KEY 	(CPD),
 	INDEX CPD (CPD),
 	INDEX UID (UID)
